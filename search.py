@@ -248,12 +248,12 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 
 
 def ASTAR(problem, start, heuristic):
-    # Used PriorityQueue to easily find lowest cost path
+
+    # Use PriorityQueue to easily find lowest cost path
     frontier = PriorityQueue()
     visited = []
 
-    paths = {}
-    paths[generateIndex(start)] = []
+    paths = {generateIndex(start): []}
 
     frontier.push(start, 0)
     while not frontier.isEmpty():
@@ -268,23 +268,24 @@ def ASTAR(problem, start, heuristic):
 
         for state in problem.getSuccessors(node):
             # Append move to path history
-            newPath = deepcopy(path)
-            newPath.append(state[1])
+            newPath = path+[state1]
 
             membership = False
 
+            # Check if item exists in heap
             i = 0
-            for item in frontier.heap:
-                if item[2] == state[0]:
+            for i in range(len(frontier.heap)):
+                if frontier.heap[i][2] == state[0]:
                     membership = True
                     break
-                i += 1
 
             if state[0] not in visited and not membership:
                 # Finally push to the PriorityQueue
                 frontier.push(state[0], problem.getCostOfActions(newPath) + heuristic(state[0], problem))
                 paths[generateIndex(state[0])] = newPath
+
             elif membership:
+                # If lower cost path is found update the path inside frontier
                 if (problem.getCostOfActions(newPath) + heuristic(state[0], problem)) < frontier.heap[i][0]:
                     frontier.update(state[0], problem.getCostOfActions(newPath) + heuristic(state[0], problem))
                     paths[generateIndex(state[0])] = newPath
