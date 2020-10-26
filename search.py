@@ -188,7 +188,7 @@ def breadthFirstSearch(problem):
                 if not state[0] in visited:
                     visited.append(state[0])
 
-                    parentPath.push([item[0]+[state[1],state[0]]])
+                    parentPath.push([item[0]+[state[1]],state[0]])
 
 
 def uniformCostSearch(problem):
@@ -268,7 +268,7 @@ def ASTAR(problem, start, heuristic):
 
         for state in problem.getSuccessors(node):
             # Append move to path history
-            newPath = path+[state1]
+            newPath = path+[state[1]]
 
             membership = False
 
