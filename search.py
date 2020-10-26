@@ -145,25 +145,24 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
+
     return DFS(problem, [[], [problem.getStartState()]])
 
 
+# Recursive DFS Solution
 def DFS(problem, item):
     paths = Stack()
 
     if problem.isGoalState(item[1][-1]):
         return item[0]
 
-    for state in problem.getSuccessors(item[1][-1]):
-        if (not state[0] in item[1]):
-            copy = deepcopy(item)
-            copy[0].append(state[1])
-            copy[1].append(state[0])
-            paths.push(copy)
+    [paths.push([item[0]+[state[1]], item[1]+[state[0]]]) \
+        for state in problem.getSuccessors(item[1][-1]) if not state[0] in item[1]]
 
     while not paths.isEmpty():
         directions = DFS(problem, paths.pop())
-        if (directions):
+
+        if directions:
             return directions
 
 
@@ -189,10 +188,7 @@ def breadthFirstSearch(problem):
                 if not state[0] in visited:
                     visited.append(state[0])
 
-                    copy = deepcopy(item)
-                    copy[0].append(state[1])
-                    copy[1] = state[0]
-                    parentPath.push(copy)
+                    parentPath.push([item[0]+[state[1],state[0]]])
 
 
 def uniformCostSearch(problem):
@@ -285,8 +281,6 @@ def ASTAR(problem, start, heuristic):
                 i += 1
 
             if state[0] not in visited and not membership:
-                # Append move to path history
-
                 # Finally push to the PriorityQueue
                 frontier.push(state[0], problem.getCostOfActions(newPath) + heuristic(state[0], problem))
                 paths[generateIndex(state[0])] = newPath
@@ -301,7 +295,6 @@ def ASTAR(problem, start, heuristic):
 
 def generateIndex(array):
     return hash(str(array))
-    return hash(array)
 
 
 # Abbreviations
