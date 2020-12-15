@@ -2,7 +2,7 @@
 
 A pacman goal based agent. I have solved several of these search problems using depth first search, breadth first search, Uniform Cost Search, and A Star Search.
 
-The goal of this problem is to navigate through a maze and find the one food node. Below is an example on the maze bigMaze
+The goal of this problem is to navigate through a maze and find the one food node. Below is an example on the maze big Maze:
 
 ![pacman Domain](https://www2.cs.duke.edu/courses/spring15/compsci270/hw1/maze.png)
 
