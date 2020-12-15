@@ -12,5 +12,5 @@ In the [search.py](https://github.com/forksup/CSE-571-Pacman-Search-Problem/blob
 
 In the [searchAgents.py](https://github.com/forksup/CSE-571-Pacman-Search-Problem/blob/main/searchAgents.py) file, I created problem definitions to encode the state space differently to allow my search algorithms to solve different problems. Such as the find all corners and eat all food. I developed heuristics that increased the efficiency of the A* algorithm.
 
-A detailed description of the project can be found here:
+Another detailed description of the project can be found here:
 https://inst.eecs.berkeley.edu/~cs188/sp19/project1.html#Q8
