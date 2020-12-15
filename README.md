@@ -1,6 +1,7 @@
 # CSE-571-Pacman-Search-Problem
 
-A Pacman goal-based agent. I have solved several of these search problems using depth-first search, breadth-first search, uniform cost search, and a star search.
+A Pacman goal-based agent. I have solved several of these search problems using depth-first search, breadth-first search, uniform cost search, and a star search. A full description of the project can be found in ![PJ1-Desp.pdf](https://github.com/forksup/CSE-571-Pacman-Search-Problem/blob/main/PJ1-Desp.pdf).
+
 
 The goal of this problem is to navigate through a maze and find one food node. Below is an example of the maze big Maze:
 
