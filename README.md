@@ -5,7 +5,7 @@ A Pacman goal-based agent. I have solved several of these search problems using 
 
 The goal of this problem is to navigate through a maze and find one food node. Below is an example of the maze big Maze:
 
-![pacman Domain](https://www2.cs.duke.edu/courses/spring15/compsci270/hw1/maze.png)
+![pacman Domain](https://adrianyi.com/img/Pacman/medium_maze_bfs.gif)
 
 In the [search.py](https://github.com/forksup/CSE-571-Pacman-Search-Problem/blob/main/search.py) file you can see my execution of these algorithm styles. These are used as agents for pathfinding in the Pacman world. 
 
